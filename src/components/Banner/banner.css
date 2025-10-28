@@ -1,0 +1,53 @@
+/* ------- 1920x1080 ------- */
+#banner {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image de fond */
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.8);
+}
+
+.banner-underline {
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenu de la bannière */
+.banner-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  width: 50%;
+}
+
+/* Styles des textes */
+.banner-content h1 {
+  font-family: "Garnetta";
+  font-size: 10rem;
+}
+
+.banner-content h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.banner-content h3 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  line-height: 1.8;
+}
