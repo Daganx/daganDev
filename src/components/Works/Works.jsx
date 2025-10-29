@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import "./Works.css";
+import "./works.css";
 
 export default function Works() {
   const ref = useRef(null);
