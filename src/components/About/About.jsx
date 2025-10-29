@@ -2,7 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
 import { useRef } from "react";
-import "./About.css";
+import "./about.css";
 
 export default function About() {
   const ref = useRef(null);
