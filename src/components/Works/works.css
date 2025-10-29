@@ -1,5 +1,95 @@
-#works {
-    height: 100vh;
-    width: 100%;
-    background-color: beige;
+.works {
+  /* Aligner le titre vertical à gauche et la grille Bento à droite */
+  display: flex;
+  align-items: center;
+  /* Espacement entre le titre et la grille */
+  justify-content: space-around;
+  gap: 2rem;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 3rem;
+}
+
+/* Texte vertical penché vers le cadre */
+.works__title {
+  font-size: 9vw;
+  font-weight: bold;
+  color: #222;
+  flex-shrink: 0;
+  writing-mode: vertical-rl;
+  margin-right: 50px; /* Espacement entre le titre et la grille */
+}
+
+/* 🍱 Style de la Grille Bento */
+.works__bento-grid {
+  /* Prend l'espace restant à droite */
+  flex-grow: 1;
+  max-width: 1200px;
+  height: 80%; /* Occupe la majorité de la hauteur disponible */
+
+  /* Mise en page en grille */
+  display: grid;
+  /* 3 colonnes de taille égale (ou ajustez selon le design souhaité) */
+  grid-template-columns: repeat(3, 1fr);
+  /* 2 rangées de taille égale */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px; /* Espace entre les boîtes */
+}
+
+/* Style commun à toutes les boîtes */
+.bento-item {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Pour contenir les images ou graphiques */
+}
+
+.bento-item:hover {
+  transform: translateY(-5px); /* Petit effet de survol */
+}
+
+.bento-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.bento-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Ajustements spécifiques pour l'effet Bento (span de plusieurs colonnes/lignes) */
+/* Exemple : Le premier projet prend deux colonnes */
+.item-1 {
+  grid-column: span 2;
+  background-color: #222;
+  color: white;
+  justify-content: space-between;
+  /* Vous pourriez ajouter un  ici en background */
+}
+
+.item-1 h3,
+.item-1 p {
+  color: white;
+}
+
+/* Exemple : Le dernier élément (Voir plus) est plus simple */
+.item-4 {
+  grid-row: span 1;
+  background-color: #e0f7fa;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bento-link {
+  color: #FFC500;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
 }

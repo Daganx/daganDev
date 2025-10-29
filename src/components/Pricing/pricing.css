@@ -1,5 +1,91 @@
-#pricing{
-    height: 100vh;
+.pricing {
+    /* Aligner le contenu à gauche et le titre à droite */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
-    background-color: blanchedalmond;
-}
+    padding-bottom: 2rem;
+  }
+  
+  /* ➡️ Titre vertical à droite */
+  .pricing__title {
+    font-size: 9vw;
+    font-weight: bold;
+    flex-shrink: 0;
+    writing-mode: vertical-rl;
+    margin-left: 50px; /* Espacement entre le titre et le contenu */
+  }
+  
+  /* ⬅️ Contenu des Tarifs à gauche */
+  .pricing__content {
+    flex-grow: 1; 
+    max-width: 800px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Pour espacer l'explication et les cartes */
+  }
+  
+  .pricing__explanation {
+      margin-bottom: 40px;
+  }
+  
+  .pricing__explanation h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+  }
+  
+  .pricing__explanation p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #666;
+  }
+  
+  /* Grille pour les cartes de tarifs */
+  .pricing__cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Deux colonnes pour deux plans */
+      gap: 30px;
+      width: 100%;
+  }
+  
+  .pricing-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease;
+  }
+  
+  .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .pricing-card h4 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #222;
+  }
+  
+  .pricing-card .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #FFC500; /* Couleur d'accentuation */
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+  }
+  
+  .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .pricing-card li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #444;
+  }

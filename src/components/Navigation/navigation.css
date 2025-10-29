@@ -6,11 +6,17 @@ nav {
 
 nav ul{
     display: flex;
-    gap: 1rem;
-    color: white;
-    font-size: 1.2rem;
+    gap: 2.5rem;
+    color: black;
+    font-size: 1.8rem;
 }
 
 nav ul li {
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+    color: #FFC500;
 }
