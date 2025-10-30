@@ -1,6 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+
+import linkedinIcon from "../../assets/icons/linkedin.png";
+import mailIcon from "../../assets/icons/mail.png";
+import twitterIcon from "../../assets/icons/twitter.png";
+
 import "./contact.css";
 
 export default function Contact() {
@@ -42,28 +47,28 @@ export default function Contact() {
           <div className="contact__socials">
             {/* Remplacez les icônes par des composants réels si vous utilisez une librairie d'icônes */}
             <a
-              href="mailto:votre.email@exemple.com"
+              href="dagan.letot@icloud.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Envoyer un e-mail"
             >
-              📧
+              <img src={mailIcon} alt="" />
             </a>
             <a
-              href="https://linkedin.com/in/votreprofil"
+              href="https://linkedin.com/in/letotdagan"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Profil LinkedIn"
             >
-              💼
+              <img src={linkedinIcon} alt="" />
             </a>
             <a
-              href="https://instagram.com/votreprofil"
+              href="https://x.com/dagandev"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Profil Instagram"
             >
-              📷
+              <img src={twitterIcon} alt="" />
             </a>
           </div>
         </motion.div>

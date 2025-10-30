@@ -1,11 +1,14 @@
 .about {
-  background-color: #ffffff;
-  height: 70vh;
+  background-color: #F9F9F9;
   width: 100%;
+  height: 80vh;
   font-family: "Glonto";
-  color: #111;
+  color: #222;
   display: flex;
+  /* Cette ligne centre déjà verticalement le contenu */
   align-items: center;
+  /* Optionnel, pour centrer s'il y avait un élément fixe */
+  justify-content: center;
 }
 
 .about__content {
@@ -13,8 +16,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 6rem;
+  /* Cette ligne centre horizontalement */
   margin: 0 auto;
   padding: 3rem;
+  width: 100%; /* S'assurer qu'il prend toute la largeur disponible pour que margin: 0 auto fonctionne */
+  max-width: 1920px; /* Ajoutez une max-width pour éviter qu'il ne s'étende trop */
 }
 
 .about__text {

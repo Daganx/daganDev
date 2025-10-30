@@ -1,0 +1,103 @@
+#timeline {
+  width: 100%;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #222;
+}
+
+.timeline__container {
+  border-radius: 12px;
+  padding: 50px;
+  width: 100%;
+  max-width: 1720px;
+}
+
+.timeline__title {
+  font-size: 3rem;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+
+.timeline__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ➡️ En-tête du Tableau (3 colonnes: #, Étapes, Flèche) */
+.timeline__header {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px; /* Ajout d'une colonne de 50px pour la flèche */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #777;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Conteneur de la Ligne et de la Description */
+.timeline__item {
+  border-bottom: 1px solid #ddd; /* Bordure de séparation */
+}
+
+/* Ligne Cliquable */
+.timeline__row {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px; /* 3 colonnes: #, Nom, Flèche */
+  align-items: center;
+  padding: 18px 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+/* 🖱️ Effets de Survol et d'Ouverture */
+.timeline__row:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.timeline__row.active {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #111;
+}
+
+.timeline__id {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.timeline__name {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* ⬅️ Flèche Indicatrice Animée */
+.timeline__arrow {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+  text-align: right;
+  justify-self: flex-end; /* Aligner à droite dans sa colonne */
+  color: #222;
+  /* La rotation est gérée par Framer Motion (animate={{ rotate: isOpen ? 90 : 0 }}) */
+}
+
+/* ⬇️ Contenu des Détails (Déroulement) */
+.timeline__details {
+  overflow: hidden; /* ESSENTIEL pour l'animation de hauteur */
+  /* Décalage: 100px pour le # et padding sur la droite (50px pour la colonne flèche) */
+  padding: 0 50px 0 100px;
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.timeline__details p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0;
+}

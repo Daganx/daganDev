@@ -1,95 +1,82 @@
+/* Styles existants */
 .works {
-  /* Aligner le titre vertical à gauche et la grille Bento à droite */
   display: flex;
   align-items: center;
-  /* Espacement entre le titre et la grille */
   justify-content: space-around;
-  gap: 2rem;
+  gap: 5rem;
   width: 100%;
-  height: 100vh;
-  padding-bottom: 3rem;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #222;
+  position: relative; /* IMPORTANT: Pour positionner l'aperçu flottant */
 }
 
-/* Texte vertical penché vers le cadre */
 .works__title {
   font-size: 9vw;
   font-weight: bold;
   color: #222;
   flex-shrink: 0;
   writing-mode: vertical-rl;
-  margin-right: 50px; /* Espacement entre le titre et la grille */
+  text-orientation: mixed;
+  margin-right: 50px;
 }
+/* Fin des styles existants */
 
-/* 🍱 Style de la Grille Bento */
-.works__bento-grid {
-  /* Prend l'espace restant à droite */
+/* --- Nouveaux Styles pour la Grille Minimaliste --- */
+
+.works__content-container {
   flex-grow: 1;
-  max-width: 1200px;
-  height: 80%; /* Occupe la majorité de la hauteur disponible */
+  max-width: 1200px; /* Limiter la largeur de la grille */
+}
 
-  /* Mise en page en grille */
+.projet-minimal__grid {
   display: grid;
-  /* 3 colonnes de taille égale (ou ajustez selon le design souhaité) */
-  grid-template-columns: repeat(3, 1fr);
-  /* 2 rangées de taille égale */
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px; /* Espace entre les boîtes */
+  /* 2 colonnes, ajustez à 3 si vous avez plus de projets */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 80px;
+  padding: 50px 0;
 }
 
-/* Style commun à toutes les boîtes */
-.bento-item {
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  overflow: hidden; /* Pour contenir les images ou graphiques */
+.project-item {
+  cursor: pointer;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* Ligne de séparation très subtile */
+  transition: border-bottom 0.3s;
 }
 
-.bento-item:hover {
-  transform: translateY(-5px); /* Petit effet de survol */
+.project-item:hover {
+  border-bottom: 1px solid #222; /* Ligne de séparation plus marquée au survol */
 }
 
-.bento-item h3 {
-  font-size: 1.5rem;
+.project-item__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
   margin-bottom: 5px;
+  line-height: 1.2;
 }
-.bento-item p {
-  font-size: 0.9rem;
+
+.project-item__meta {
+  font-size: 0.85rem;
   color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Ajustements spécifiques pour l'effet Bento (span de plusieurs colonnes/lignes) */
-/* Exemple : Le premier projet prend deux colonnes */
-.item-1 {
-  grid-column: span 2;
-  background-color: #222;
-  color: white;
-  justify-content: space-between;
-  /* Vous pourriez ajouter un  ici en background */
-}
+/* 🖼️ Aperçu Flottant (Image) */
+.project-preview {
+  position: absolute;
+  /* Positionnement pour un bel emplacement à droite */
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
 
-.item-1 h3,
-.item-1 p {
-  color: white;
-}
-
-/* Exemple : Le dernier élément (Voir plus) est plus simple */
-.item-4 {
-  grid-row: span 1;
-  background-color: #e0f7fa;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.bento-link {
-  color: #FFC500;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: 10px;
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  pointer-events: none; /* ESSENTIEL: Ne bloque pas l'interaction avec les éléments en dessous */
 }

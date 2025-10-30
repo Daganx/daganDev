@@ -1,22 +1,21 @@
 nav {
-    position: absolute;
-    z-index: 2;
-    top: 1rem;
+  position: absolute;
+  z-index: 2;
+  top: 3rem;
 }
 
-nav ul{
-    display: flex;
-    gap: 2.5rem;
-    color: black;
-    font-size: 1.8rem;
+nav ul {
+  display: flex;
+  gap: 2.5rem;
+  color: black;
+  font-size: 1.8rem;
 }
 
 nav ul li {
-    cursor: pointer;
-    transition: transform 0.3s;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 nav ul li:hover {
-    transform: scale(1.1);
-    color: #FFC500;
+  transform: scale(1.1);
 }

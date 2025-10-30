@@ -7,12 +7,13 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #f9f9f9;
-  border-bottom: 2px solid #222;
+  background-color: #f8f7f1;
+  background-image: url("../../assets/images/banner/shadow2.png");
+  background-size: cover;
 }
 
 /* Contenu de la bannière */
-.banner-content {
+.banner__content {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -20,7 +21,7 @@
 }
 
 /* Styles des textes */
-.banner-content h1 {
+.banner__content h1 {
   font-family: "Glonto";
   font-size: 12rem;
 }
@@ -34,6 +35,12 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.world {
+  height: 150px;
+  width: 150px;
+  padding-top: 2rem;
+}
+
 @keyframes float {
   0%,
   100% {
@@ -44,17 +51,17 @@
   }
 }
 
-.banner-content h2 {
+.banner__content h2 {
   font-size: 3rem;
   margin-top: 1rem;
 }
 
-.banner-content h1 {
+.banner__content h1 {
   display: inline-block;
   overflow: hidden;
 }
 
-.banner-content h1 span {
+.banner__content h1 span {
   display: inline-block;
   transform: translateY(100%);
   animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;

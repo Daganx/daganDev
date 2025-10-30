@@ -1,21 +1,76 @@
 /* eslint-disable no-unused-vars */
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 import "./works.css";
+
+const minimalProjects = [
+  {
+    id: 1,
+    title: "E-commerce Redesign",
+    category: "UI/UX",
+    year: 2024,
+    image: "/images/toggle.avif",
+  },
+  {
+    id: 2,
+    title: "Portfolio V3",
+    category: "Full Stack",
+    year: 2024,
+    image: "url_image_portfolio.jpg",
+  },
+  {
+    id: 3,
+    title: "Outil Admin Custom",
+    category: "Backend",
+    year: 2023,
+    image: "url_image_admin.jpg",
+  },
+  {
+    id: 4,
+    title: "Landing Page Météo",
+    category: "Frontend",
+    year: 2023,
+    image: "url_image_meteo.jpg",
+  },
+  {
+    id: 5,
+    title: "Landing Page Météo",
+    category: "Frontend",
+    year: 2023,
+    image: "url_image_meteo.jpg",
+  },
+  {
+    id: 6,
+    title: "Landing Page Météo",
+    category: "Frontend",
+    year: 2023,
+    image: "url_image_meteo.jpg",
+  },
+];
 
 export default function Works() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Les animations Framer Motion peuvent être ajoutées à chaque 'bento-item'
+  // État pour l'image actuellement survolée
+  const [hoveredImage, setHoveredImage] = useState(null);
+
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
+  const handleMouseEnter = (image) => {
+    setHoveredImage(image);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredImage(null); // Cache l'image lorsque la souris quitte la ligne
   };
 
   return (
     <section className="works" ref={ref}>
-      {/* Texte vertical à gauche */}
+      {/* ⬅️ Titre vertical à gauche */}
       <motion.div
         className="works__title"
         initial={{ opacity: 0, y: 50 }}
@@ -25,36 +80,45 @@ export default function Works() {
         <h2>Projets</h2>
       </motion.div>
 
-      {/* 🍱 Grille Bento à droite */}
-      <motion.div
-        className="works__bento-grid"
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        transition={{ staggerChildren: 0.15 }} // Décaler l'apparition des éléments enfants
-      >
-        <motion.div className="bento-item item-1" variants={itemVariants}>
-          <h3>Projet 1: E-commerce</h3>
-          <p>Un aperçu de notre boutique en ligne moderne.</p>
+      {/* ➡️ Contenu des Projets (Grille) */}
+      <div className="works__content-container">
+        <motion.div
+          className="projet-minimal__grid"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ staggerChildren: 0.1 }} // Animation des enfants décalée
+        >
+          {minimalProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="project-item"
+              variants={itemVariants}
+              onMouseEnter={() => handleMouseEnter(project.image)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <h3 className="project-item__title">{project.title}</h3>
+              <p className="project-item__meta">
+                {project.year} / {project.category}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
-        <motion.div className="bento-item item-2" variants={itemVariants}>
-          <h3>Projet 2: App Mobile</h3>
-          <p>Interface utilisateur propre et réactive.</p>
-        </motion.div>
-        <motion.div className="bento-item item-3" variants={itemVariants}>
-          <h3>Projet 3: Agence Web</h3>
-          <p>Design primé sur Awwwards.</p>
-        </motion.div>
-        <motion.div className="bento-item item-4" variants={itemVariants}>
-          <p>Découvrez tous mes projets sur mon porfolio</p>
-          <a
-            href="https://daganx.github.io/portfoliov2/"
-            target="newblank"
-            className="bento-link"
-          >
-            Voir plus →
-          </a>
-        </motion.div>
-      </motion.div>
+      </div>
+
+      {/* 🖼️ Aperçu Flottant (Révélé au survol) */}
+      <AnimatePresence>
+        {hoveredImage && (
+          <motion.div
+            key={hoveredImage} // Clé pour forcer l'animation de changement
+            className="project-preview"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+            style={{ backgroundImage: `url(${hoveredImage})` }}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
