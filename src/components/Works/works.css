@@ -1,4 +1,3 @@
-/* Styles existants */
 .works {
   display: flex;
   align-items: center;
@@ -7,9 +6,9 @@
   width: 100%;
   min-height: 100vh;
   background-color: #f9f9f9;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Glonto";
   color: #222;
-  position: relative; /* IMPORTANT: Pour positionner l'aperçu flottant */
+  position: relative;
 }
 
 .works__title {
@@ -21,32 +20,34 @@
   text-orientation: mixed;
   margin-right: 50px;
 }
-/* Fin des styles existants */
-
-/* --- Nouveaux Styles pour la Grille Minimaliste --- */
 
 .works__content-container {
   flex-grow: 1;
-  max-width: 1200px; /* Limiter la largeur de la grille */
+  max-width: 1200px;
 }
 
 .projet-minimal__grid {
   display: grid;
-  /* 2 colonnes, ajustez à 3 si vous avez plus de projets */
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px 80px;
+  gap: 40px 60px;
   padding: 50px 0;
+  align-items: start;
+}
+
+.project-item-wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 20px;
+  transition: border-bottom 0.3s;
+}
+
+.project-item-wrapper:hover {
+  border-bottom: 1px solid #222;
 }
 
 .project-item {
   cursor: pointer;
-  padding-bottom: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* Ligne de séparation très subtile */
-  transition: border-bottom 0.3s;
-}
-
-.project-item:hover {
-  border-bottom: 1px solid #222; /* Ligne de séparation plus marquée au survol */
+  position: relative;
+  padding-right: 25px;
 }
 
 .project-item__title {
@@ -64,19 +65,221 @@
   letter-spacing: 0.5px;
 }
 
-/* 🖼️ Aperçu Flottant (Image) */
-.project-preview {
+.project-item-toggle {
   position: absolute;
-  /* Positionnement pour un bel emplacement à droite */
   top: 50%;
-  right: 5%;
+  right: 0;
   transform: translateY(-50%);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #888;
+}
 
-  width: 300px;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
+.project-details-box {
+  overflow: hidden;
+}
+
+.project-details-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-  pointer-events: none; /* ESSENTIEL: Ne bloque pas l'interaction avec les éléments en dessous */
+  margin-bottom: 15px;
+}
+
+.project-details-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Liste des technologies */
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background-color: #f0f0f0;
+  color: #555;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Media Query Tablette */
+@media (max-width: 1024px) {
+  .works {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 2rem;
+    min-height: auto;
+    box-sizing: border-box;
+  }
+
+  .works__title {
+    font-size: 4rem;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .works__content-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .projet-minimal__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 40px;
+    padding: 1rem 0;
+    padding-bottom: 5rem;
+    box-sizing: border-box;
+  }
+
+  .project-item__title {
+    font-size: 1.6rem;
+  }
+
+  .project-item__meta {
+    font-size: 0.8rem;
+  }
+
+  .project-item-toggle {
+    font-size: 1.4rem;
+  }
+
+  .project-details-image {
+    height: 200px;
+  }
+
+  .project-details-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 9px;
+  }
+}
+
+/* Media Query Mobile */
+@media (max-width: 768px) {
+  .works {
+    gap: 2rem;
+  }
+
+  .works__title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .projet-minimal__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px 0;
+  }
+
+  .project-item-wrapper {
+    padding-bottom: 15px;
+  }
+
+  .project-item {
+    padding-right: 20px;
+  }
+
+  .project-item__title {
+    font-size: 1.4rem;
+  }
+
+  .project-item__meta {
+    font-size: 0.75rem;
+  }
+
+  .project-item-toggle {
+    font-size: 1.3rem;
+  }
+
+  .project-details-image {
+    height: 180px;
+    margin-bottom: 12px;
+  }
+
+  .project-details-description {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+
+  .project-tech-list {
+    gap: 6px;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Media Query Petits mobiles (jusqu'à 375px) */
+@media (max-width: 375px) {
+  .works {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .works__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .projet-minimal__grid {
+    gap: 20px;
+    padding: 1rem;
+  }
+
+  .project-item-wrapper {
+    padding-bottom: 12px;
+  }
+
+  .project-item {
+    padding-right: 18px;
+  }
+
+  .project-item__title {
+    font-size: 1.25rem;
+  }
+
+  .project-item__meta {
+    font-size: 0.7rem;
+  }
+
+  .project-item-toggle {
+    font-size: 1.2rem;
+  }
+
+  .project-details-image {
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .project-details-description {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .project-tech-list {
+    gap: 5px;
+  }
+
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 3px 7px;
+  }
 }

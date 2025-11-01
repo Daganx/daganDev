@@ -44,7 +44,7 @@ export default function About() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h3>{isInView ? <CountUp end={800} duration={2.5} /> : 0}+</h3>
+            <h3>{isInView ? <CountUp end={2000} duration={2.5} /> : 0}+</h3>
             <p>Heures de formation et de pratique intensive</p>
           </motion.div>
 

@@ -67,24 +67,6 @@ export default function Pricing() {
               <li>Optimisation de base</li>
             </ul>
           </div>
-          <div className="pricing-card card-basic">
-            <h4>Plan Basic</h4>
-            <p className="price">À partir de 1500 €</p>
-            <ul>
-              <li>Site vitrine sur mesure</li>
-              <li>Design Responsive (Mobile)</li>
-              <li>Optimisation de base</li>
-            </ul>
-          </div>
-          <div className="pricing-card card-basic">
-            <h4>Plan Basic</h4>
-            <p className="price">À partir de 1500 €</p>
-            <ul>
-              <li>Site vitrine sur mesure</li>
-              <li>Design Responsive (Mobile)</li>
-              <li>Optimisation de base</li>
-            </ul>
-          </div>
         </div>
       </motion.div>
 

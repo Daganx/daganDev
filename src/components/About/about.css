@@ -1,13 +1,11 @@
 .about {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   width: 100%;
   height: 80vh;
   font-family: "Glonto";
   color: #222;
   display: flex;
-  /* Cette ligne centre déjà verticalement le contenu */
   align-items: center;
-  /* Optionnel, pour centrer s'il y avait un élément fixe */
   justify-content: center;
 }
 
@@ -16,11 +14,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 6rem;
-  /* Cette ligne centre horizontalement */
   margin: 0 auto;
   padding: 3rem;
-  width: 100%; /* S'assurer qu'il prend toute la largeur disponible pour que margin: 0 auto fonctionne */
-  max-width: 1920px; /* Ajoutez une max-width pour éviter qu'il ne s'étende trop */
+  width: 100%;
+  max-width: 1920px;
 }
 
 .about__text {
@@ -63,4 +60,130 @@
   width: 80%;
   height: 1px;
   background-color: #ddd;
+}
+
+/* Media Query Tablette */
+@media (max-width: 1024px) {
+  .about {
+    height: auto;
+    min-height: 80vh;
+    padding: 2rem 0;
+  }
+
+  .about__content {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about__text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about__text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about__text p {
+    font-size: 1rem;
+  }
+
+  .about__stats {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .stat h3 {
+    font-size: 2.5rem;
+  }
+
+  .stat p {
+    font-size: 0.9rem;
+  }
+
+  .divider {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* Media Query Mobile */
+@media (max-width: 768px) {
+  .about {
+    height: auto;
+    padding: 1.5rem 0;
+  }
+
+  .about__content {
+    gap: 3rem;
+    padding: 1.5rem;
+  }
+
+  .about__text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about__text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .about__stats {
+    gap: 1.5rem;
+  }
+
+  .stat h3 {
+    font-size: 2rem;
+  }
+
+  .stat p {
+    font-size: 0.85rem;
+  }
+
+  .divider {
+    width: 50%;
+  }
+}
+
+/* Media Query Petits mobiles (jusqu'à 375px) */
+@media (max-width: 375px) {
+  .about {
+    padding: 1rem 0;
+  }
+
+  .about__content {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .about__text h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .about__text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .about__stats {
+    gap: 1.2rem;
+  }
+
+  .stat h3 {
+    font-size: 1.75rem;
+  }
+
+  .stat p {
+    font-size: 0.8rem;
+  }
+
+  .divider {
+    width: 40%;
+  }
 }

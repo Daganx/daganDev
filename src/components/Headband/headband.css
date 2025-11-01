@@ -1,30 +1,22 @@
 .headband {
-  /* Style de la section elle-même */
   width: 100%;
-  /* Utiliser votre couleur d'accent (comme le jaune de la section Contact) pour plus d'impact */
   background-color: #ffc72c;
-  padding: 10px 0; /* Hauteur du bandeau */
-  overflow: hidden; /* ESSENTIEL: Cache le texte qui déborde avant qu'il ne rentre dans l'écran */
-  color: #222;
-  font-family: "Helvetica Neue", sans-serif;
+  padding: 10px 0;
+  overflow: hidden;
+  font-family: "Glonto";
   text-transform: uppercase;
   font-weight: 700;
-  white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+  white-space: nowrap;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.06);
-    
 }
 
 .headband-container {
   width: 100%;
-  /* On utilise overflow: hidden sur le parent (.headband) */
 }
 
 .headband-text {
-  /* Le conteneur Flexbox est retiré. On utilise Framer Motion (x: ["0%", "-100%"])
-       pour le mouvement continu. */
   display: inline-block;
   font-size: 1.2rem;
   line-height: 1;
-  /* Le texte doit être suffisamment grand pour que l'effet de répétition soit visible */
 }

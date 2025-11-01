@@ -31,7 +31,7 @@
 /* ➡️ En-tête du Tableau (3 colonnes: #, Étapes, Flèche) */
 .timeline__header {
   display: grid;
-  grid-template-columns: 100px 1fr 50px; /* Ajout d'une colonne de 50px pour la flèche */
+  grid-template-columns: 100px 1fr 50px;
   font-size: 0.9rem;
   text-transform: uppercase;
   color: #777;
@@ -39,15 +39,14 @@
   border-bottom: 1px solid #ddd;
 }
 
-/* Conteneur de la Ligne et de la Description */
 .timeline__item {
-  border-bottom: 1px solid #ddd; /* Bordure de séparation */
+  border-bottom: 1px solid #ddd;
 }
 
 /* Ligne Cliquable */
 .timeline__row {
   display: grid;
-  grid-template-columns: 100px 1fr 50px; /* 3 colonnes: #, Nom, Flèche */
+  grid-template-columns: 100px 1fr 50px;
   align-items: center;
   padding: 18px 0;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -80,15 +79,13 @@
   font-weight: 300;
   line-height: 1;
   text-align: right;
-  justify-self: flex-end; /* Aligner à droite dans sa colonne */
+  justify-self: flex-end;
   color: #222;
-  /* La rotation est gérée par Framer Motion (animate={{ rotate: isOpen ? 90 : 0 }}) */
 }
 
 /* ⬇️ Contenu des Détails (Déroulement) */
 .timeline__details {
-  overflow: hidden; /* ESSENTIEL pour l'animation de hauteur */
-  /* Décalage: 100px pour le # et padding sur la droite (50px pour la colonne flèche) */
+  overflow: hidden;
   padding: 0 50px 0 100px;
   background-color: rgba(0, 0, 0, 0.01);
 }
@@ -100,4 +97,149 @@
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 0;
+}
+
+/* Media Query Tablette */
+@media (max-width: 1024px) {
+  .timeline__container {
+    padding: 40px 30px;
+  }
+
+  .timeline__title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .timeline__header {
+    grid-template-columns: 80px 1fr 40px;
+    font-size: 0.85rem;
+  }
+
+  .timeline__row {
+    grid-template-columns: 80px 1fr 40px;
+    padding: 16px 0;
+  }
+
+  .timeline__id {
+    font-size: 1.2rem;
+  }
+
+  .timeline__name {
+    font-size: 1.3rem;
+  }
+
+  .timeline__arrow {
+    font-size: 1.6rem;
+  }
+
+  .timeline__details {
+    padding: 0 40px 0 80px;
+  }
+
+  .timeline__details p {
+    font-size: 1rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+/* Media Query Mobile */
+@media (max-width: 768px) {
+  #timeline {
+    padding: 2rem 0;
+  }
+
+  .timeline__container {
+    padding: 30px 20px;
+  }
+
+  .timeline__title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .timeline__header {
+    grid-template-columns: 60px 1fr 35px;
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+  }
+
+  .timeline__row {
+    grid-template-columns: 60px 1fr 35px;
+    padding: 14px 0;
+  }
+
+  .timeline__id {
+    font-size: 1.1rem;
+  }
+
+  .timeline__name {
+    font-size: 1.1rem;
+  }
+
+  .timeline__arrow {
+    font-size: 1.4rem;
+  }
+
+  .timeline__details {
+    padding: 0 35px 0 60px;
+  }
+
+  .timeline__details p {
+    font-size: 0.95rem;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* Media Query Petits mobiles (jusqu'à 375px) */
+@media (max-width: 375px) {
+  #timeline {
+    padding: 1.5rem 0;
+  }
+
+  .timeline__container {
+    padding: 20px 15px;
+  }
+
+  .timeline__title {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  .timeline__header {
+    grid-template-columns: 50px 1fr 30px;
+    font-size: 0.75rem;
+    padding-bottom: 8px;
+  }
+
+  .timeline__row {
+    grid-template-columns: 50px 1fr 30px;
+    padding: 12px 0;
+  }
+
+  .timeline__id {
+    font-size: 1rem;
+  }
+
+  .timeline__name {
+    font-size: 1rem;
+  }
+
+  .timeline__arrow {
+    font-size: 1.2rem;
+  }
+
+  .timeline__details {
+    padding: 0 30px 0 50px;
+  }
+
+  .timeline__details p {
+    font-size: 0.9rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    line-height: 1.4;
+  }
 }

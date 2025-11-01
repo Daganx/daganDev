@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 import linkedinIcon from "../../assets/icons/linkedin.png";
 import mailIcon from "../../assets/icons/mail.png";
@@ -12,40 +13,74 @@ export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Variants pour les éléments de la grille (Information et Formulaire)
+  const formRef = useRef(null);
+
+  const [isSending, setIsSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
   const gridItemVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isSending) return;
+
+    setIsSending(true);
+    setStatusMessage("Envoi en cours...");
+
+    emailjs
+      .sendForm(
+        "service_rcgysxo",
+        "template_k0byal9", // 👈 Remplacez par votre Template ID
+        formRef.current, // 👈 Cible le formulaire
+        "QNXHeYKYn-ezFuwra" // 👈 Remplacez par votre Public Key
+      )
+      .then(
+        (result) => {
+          console.log("Email envoyé avec succès !", result.text);
+          setStatusMessage("Message envoyé avec succès !");
+          setIsSending(false);
+          formRef.current.reset(); // Réinitialise les champs du formulaire
+        },
+        (error) => {
+          console.error("Échec de l'envoi...", error.text);
+          setStatusMessage("Erreur. Veuillez réessayer plus tard.");
+          setIsSending(false);
+        }
+      );
+  };
+
   return (
     <section id="contact" className="contact" ref={ref}>
-      {/* Titre principal - Animation par le bas (similaire au titre de Works) */}
+      {/* Titre principal */}
       <motion.h2
         className="contact__title"
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        Contactez-moi
+        Contact
       </motion.h2>
 
       <div className="contact__grid">
-        {/* ⬅️ Colonne d'information (gauche) - Animation par la gauche */}
+        {/* ... (Votre colonne d'information gauche reste inchangée) ... */}
         <motion.div
           className="contact__info"
           variants={gridItemVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
+          {/* ... (votre code p, div.contact__socials) ... */}
           <p className="contact__description">
             Si vous êtes curieux d'en savoir plus sur ce que vous avez vu, je
             vous invite à me contacter ou à me suivre sur mes réseaux sociaux.
           </p>
 
-          {/* Liens sociaux/Contact (remplacez les liens) */}
+          {/* Liens sociaux/Contact */}
           <div className="contact__socials">
-            {/* Remplacez les icônes par des composants réels si vous utilisez une librairie d'icônes */}
             <a
               href="dagan.letot@icloud.com"
               target="_blank"
@@ -73,8 +108,10 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* ➡️ Formulaire de Contact (droite) - Animation par la droite (décalage de 0.2s) */}
+        {/* ➡️ Formulaire de Contact (droite) */}
         <motion.form
+          ref={formRef}
+          onSubmit={handleSubmit}
           className="contact__form"
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -108,18 +145,27 @@ export default function Contact() {
 
           <div className="form-group">
             <label htmlFor="message">Comment puis-je vous aider ?</label>
-            <input type="text" id="message" name="message" required />
+            <textarea
+              type="textarea"
+              id="message"
+              name="message"
+              rows="5"
+              required
+            ></textarea>
           </div>
 
           <motion.button
             type="submit"
             className="submit-button"
-            // Animation subtile pour le bouton
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: isSending ? 1 : 1.05 }}
+            whileTap={{ scale: isSending ? 1 : 0.95 }}
+            disabled={isSending}
           >
-            ENVOYER
+            {/* 👈 AJOUT: Change le texte pendant l'envoi */}
+            {isSending ? "ENVOI..." : "ENVOYER"}
           </motion.button>
+
+          {statusMessage && <p className="form-status">{statusMessage}</p>}
         </motion.form>
       </div>
     </section>

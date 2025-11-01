@@ -8,7 +8,10 @@ nav ul {
   display: flex;
   gap: 2.5rem;
   color: black;
-  font-size: 1.8rem;
+  font-size: clamp(1.1rem, 1rem + 1vw, 1.8rem);
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 nav ul li {
@@ -18,4 +21,25 @@ nav ul li {
 
 nav ul li:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+  }
+
+  nav ul {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  nav {
+    padding: 0 1rem;
+  }
+
+  nav ul {
+    font-size: 1rem;
+    gap: 1.2rem;
+  }
 }

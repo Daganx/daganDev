@@ -3,8 +3,6 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import "./timeline.css";
 
-// (Reste du code et des données 'stages' inchangés)
-
 export default function Timeline() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -30,7 +28,7 @@ export default function Timeline() {
     },
     {
       id: "03",
-      title: "Code",
+      title: "Développement",
       details:
         "Développement du frontend (React/Next.js) et du backend. Le code est propre, modulaire et optimisé pour la performance.",
     },
@@ -126,7 +124,7 @@ export default function Timeline() {
                   {/* ⬅️ Ajout de la flèche animée */}
                   <motion.span
                     className="timeline__arrow"
-                    animate={{ rotate: isOpen ? 90 : 0 }} // Rotation de 90 degrés
+                    animate={{ rotate: isOpen ? 90 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     →
