@@ -1,56 +1,69 @@
 /* eslint-disable no-unused-vars */
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-
 import "./works.css";
 
 const minimalProjects = [
   {
     id: 1,
-    title: "E-commerce Redesign",
-    category: "UI/UX",
-    year: 2024,
-    image: "/images/toggle.avif",
+    title: "Ophélie Numérologie (En cours)",
+    category: "Front-End",
+    year: 2025,
+    image: "",
     description:
-      "Une refonte complète de l'expérience utilisateur pour une plateforme e-commerce, en mettant l'accent sur la conversion et un design moderne.",
-    technologies: ["Figma", "React", "Node.js", "Stripe"],
+      "Site web pour une cliente numérologue. Affichage de ses informations et système de réservation.",
+    link: "",
+    technologies: ["Figma", "React", "Node.js", "MongoDB"],
   },
   {
     id: 2,
-    title: "Portfolio V3",
-    category: "Full Stack",
-    year: 2024,
-    image: "https://via.placeholder.com/600x400/FFC107/000000?text=PortfolioV3",
+    title: "Jessica Savin",
+    category: "Fullstack",
+    year: 2025,
+    image: "/images/works/jessicasavin.jpg",
     description:
-      "La troisième version de mon portfolio personnel (celui que vous voyez !), construit avec React et Framer Motion pour des animations fluides.",
-    technologies: ["React", "Framer Motion", "CSS"],
+      "Site web pour une cliente décoratrice d'intérieurs. Dashboard administrateur afin de gérer ses réalisations.",
+    link: "https://www.jessicasavin-decoration.fr/",
+    technologies: ["Figma", "React", "Node.js", "MongoDB"],
   },
   {
     id: 3,
-    title: "Outil Admin Custom",
-    category: "Backend",
-    year: 2023,
-    image: "https://via.placeholder.com/600x400/333333/FFFFFF?text=Admin+Tool",
+    title: "Portfolio",
+    category: "Front-End",
+    year: 2025,
+    image: "/images/works/dagandev.png",
     description:
-      "Un dashboard d'administration sur-mesure pour un client, permettant la gestion des utilisateurs, des commandes et l'analyse des données.",
-    technologies: ["Node.js", "Express", "MongoDB", "React"],
+      "Mon portfolio personnel de Freelance (celui que vous voyez !), construit avec React et Framer Motion pour des animations fluides.",
+    link: "https://dagan-dev.vercel.app",
+    technologies: ["React", "Framer Motion", "CSS"],
   },
   {
     id: 4,
-    title: "Landing Page Météo",
-    category: "Frontend",
-    year: 2023,
-    image: "https://via.placeholder.com/600x400/007BFF/FFFFFF?text=App+Météo",
+    title: "Logiciel de tri téléchargement",
+    category: "Logiciel",
+    year: 2024,
+    image: "/images/works/download.png",
     description:
-      "Une application web simple affichant la météo en temps réel via une API externe, avec un focus sur le design responsive.",
-    technologies: ["HTML", "CSS", "JavaScript", "API Rest"],
+      "Un logiciel fait maison qui vous permet de trier automatiquement vos téléchargements dans des sous-dossier (images, vidéos, documents..). Disponible au téléchargement.",
+    link: "https://github.com/Daganx/Downloads_Cleanup",
+    technologies: ["Javascript"],
+  },
+  {
+    id: 5,
+    title: "Gallerie d'art",
+    category: "Fullstack",
+    year: 2023,
+    image: "/images/works/Wine3.webp",
+    description:
+      "Site web pour une gallerie d'art. Dashboard administrateur afin de gérer ses réalisations.",
+    link: "",
+    technologies: ["Symfony", "PHP", "JavaScript", "CSS"],
   },
 ];
 
 export default function Works() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const [openProjectId, setOpenProjectId] = useState(null);
 
   const itemVariants = {
@@ -90,7 +103,7 @@ export default function Works() {
         <h2>Projets</h2>
       </motion.div>
 
-      {/* ➡️ Contenu des Projets (Grille) */}
+      {/* ➡️ Contenu des Projets */}
       <div className="works__content-container">
         <motion.div
           className="projet-minimal__grid"
@@ -137,6 +150,23 @@ export default function Works() {
                       <p className="project-details-description">
                         {project.description}
                       </p>
+
+                      {/* 🔗 Ajout du lien du projet */}
+                      {project.link && (
+                        <a
+                          href={
+                            project.link.startsWith("http")
+                              ? project.link
+                              : `https://${project.link}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          Voir le projet ↗
+                        </a>
+                      )}
+
                       <div className="project-tech-list">
                         {project.technologies.map((tech) => (
                           <span key={tech} className="tech-tag">

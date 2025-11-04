@@ -34,9 +34,9 @@ export default function Contact() {
     emailjs
       .sendForm(
         "service_rcgysxo",
-        "template_k0byal9", // 👈 Remplacez par votre Template ID
-        formRef.current, // 👈 Cible le formulaire
-        "QNXHeYKYn-ezFuwra" // 👈 Remplacez par votre Public Key
+        "template_k0byal9",
+        formRef.current,
+        "QNXHeYKYn-ezFuwra"
       )
       .then(
         (result) => {
@@ -66,17 +66,15 @@ export default function Contact() {
       </motion.h2>
 
       <div className="contact__grid">
-        {/* ... (Votre colonne d'information gauche reste inchangée) ... */}
         <motion.div
           className="contact__info"
           variants={gridItemVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {/* ... (votre code p, div.contact__socials) ... */}
           <p className="contact__description">
-            Si vous êtes curieux d'en savoir plus sur ce que vous avez vu, je
-            vous invite à me contacter ou à me suivre sur mes réseaux sociaux.
+            Pour toute demande de devis ou d'informations, n'hésitez pas à me
+            contacter par mail ou par téléphone au : 06 88 64 20 03
           </p>
 
           {/* Liens sociaux/Contact */}
@@ -161,7 +159,6 @@ export default function Contact() {
             whileTap={{ scale: isSending ? 1 : 0.95 }}
             disabled={isSending}
           >
-            {/* 👈 AJOUT: Change le texte pendant l'envoi */}
             {isSending ? "ENVOI..." : "ENVOYER"}
           </motion.button>
 

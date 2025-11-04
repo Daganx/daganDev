@@ -31,6 +31,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 40px 60px;
   padding: 50px 0;
+  padding-right: 1rem;
   align-items: start;
 }
 
@@ -92,6 +93,27 @@
   line-height: 1.6;
   color: #333;
   margin-bottom: 20px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.project-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #222;
+  transition: width 0.3s ease;
 }
 
 /* Liste des technologies */

@@ -29,9 +29,7 @@ export default function About() {
           </p>
           <br />
           <p>
-            Mon objectif est simple : transformer vos idées en solutions
-            digitales efficaces et élégantes, capables de séduire vos clients et
-            d’augmenter votre visibilité en ligne.
+            
           </p>
         </motion.div>
 

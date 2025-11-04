@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
   background-color: #f8f7f1;
-  background-image: url("../../assets/images/banner/shadow2.png");
+  background-image: url("../../assets/images/banner/shadow.png");
   background-size: cover;
 }
 
@@ -84,6 +84,45 @@
     opacity: 1;
   }
 }
+
+/* ---- Footer bas de bannière ---- */
+.banner__footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  color: #222;
+  opacity: 1;
+  z-index: 2;
+}
+
+.banner__footer p {
+  margin: 0;
+}
+
+.banner__location {
+  text-align: left;
+}
+
+.banner__phone {
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner__footer {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    bottom: 10px;
+  }
+}
+
 
 /* --- Media Queries --- */
 

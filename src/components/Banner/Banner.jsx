@@ -6,8 +6,7 @@ import toggle from "../../assets/images/banner/toggle.avif";
 const skills = [
   "Développeur Web - Freelance",
   "UI/UX Designer",
-  "FullStack",
-  "Graphisme"
+  "Site sur mesure"
 ];
 
 export default function Banner() {
@@ -55,6 +54,10 @@ export default function Banner() {
           {currentText}
           <span className="cursor">|</span>
         </h2>
+      </div>
+      <div className="banner__footer">
+        <p className="banner__location">Bergerac (24)</p>
+        <p className="banner__phone">06.88.64.20.03</p>
       </div>
     </section>
   );

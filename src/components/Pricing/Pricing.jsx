@@ -31,40 +31,88 @@ export default function Pricing() {
         <div className="pricing__cards-grid">
           {/* Exemple de carte de prix 1 */}
           <div className="pricing-card card-basic">
-            <h4>Plan Basic</h4>
-            <p className="price">À partir de 1500 €</p>
+            <h4>Plan Essentiel 🪶</h4>
+            <p className="price">500€</p>
             <ul>
-              <li>Site vitrine sur mesure</li>
-              <li>Design Responsive (Mobile)</li>
-              <li>Optimisation de base</li>
+              <li>1 page unique fluide et responsive</li>
+              <li>
+                Design personnalisé (identité visuelle, couleurs, typographie)
+              </li>
+              <li>Intégration des images, logo, textes fournis</li>
+              <li>Responsive design mobile/tablette</li>
+              <li>
+                Formulaire de contact basique (envoi vers email ou service
+                externe)
+              </li>
+              <li>Optimisation performance + SEO</li>
             </ul>
           </div>
           {/* Exemple de carte de prix 2 */}
           <div className="pricing-card card-premium">
-            <h4>Plan Pro</h4>
-            <p className="price">Sur devis</p>
+            <h4>Plan Professionnel 🌿</h4>
+            <p className="price">900€ à 1500€</p>
             <ul>
-              <li>Application Web complète</li>
-              <li>Backend personnalisé</li>
-              <li>Maintenance prioritaire</li>
+              <li>3 à 5 pages fluide et responsive</li>
+              <li>
+                Design personnalisé (identité visuelle, couleurs, typographie)
+              </li>
+              <li>Intégration des images, logo, textes fournis</li>
+              <li>Responsive design mobile/tablette</li>
+              <li>
+                Optimisation performance & SEO (balises meta, titres dynamiques,
+                sitemap)
+              </li>
+              <li>
+                Formulaire de contact basique (envoi vers email ou service
+                externe)
+              </li>
+              <li>Multilingue FR/EN (+150 €)</li>
             </ul>
           </div>
           <div className="pricing-card card-basic">
-            <h4>Plan Basic</h4>
-            <p className="price">À partir de 1500 €</p>
+            <h4>Plan Fullstack ⚙️</h4>
+            <p className="price">1800€ à 3000€</p>
             <ul>
-              <li>Site vitrine sur mesure</li>
-              <li>Design Responsive (Mobile)</li>
-              <li>Optimisation de base</li>
+              <li>
+                Front-end React + une API personnalisée (Node.js / Express)
+              </li>
+              <li>Gestion d’authentification et d’utilisateurs</li>
+              <li>Base de données MongoDB</li>
+              <li>Dashboard administrateur (ajout/modification de contenu)</li>
+              <li>
+                Envoi d’emails automatisé (contact, inscription, newsletter)
+              </li>
+              <li>Responsive design mobile/tablette</li>
+              <li>
+                Optimisation complète + déploiement sur serveur (Render,
+                Railway, etc.)
+              </li>
+              <li>
+                Documentation technique et formation rapide pour le client
+              </li>
             </ul>
           </div>
           <div className="pricing-card card-basic">
-            <h4>Plan Basic</h4>
-            <p className="price">À partir de 1500 €</p>
+            <h4>Plan Premium 💎</h4>
+            <p className="price">3500€ à 6000€</p>
             <ul>
-              <li>Site vitrine sur mesure</li>
-              <li>Design Responsive (Mobile)</li>
-              <li>Optimisation de base</li>
+              <li>
+                Branding complet (logo, palette, ton visuel, design Figma
+                détaillé)
+              </li>
+              <li>
+                Front-end React + une API personnalisée (Node.js / Express)
+              </li>
+              <li>Gestion d’authentification et d’utilisateurs</li>
+              <li>Base de données MongoDB</li>
+              <li>Dashboard administrateur (ajout/modification de contenu)</li>
+              <li>
+                Envoi d’emails automatisé (contact, inscription, newsletter)
+              </li>
+              <li>Responsive design mobile/tablette</li>
+              <li>Maintenance 3 mois incluse</li>
+              <li>SEO avancé et tracking Google Analytics</li>
+              <li>Formation du client à l’utilisation du site</li>
             </ul>
           </div>
         </div>
