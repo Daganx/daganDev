@@ -39,14 +39,14 @@ const minimalProjects = [
   },
   {
     id: 4,
-    title: "Logiciel de tri téléchargement",
-    category: "Logiciel",
+    title: "Portfolio International",
+    category: "Front-End",
     year: 2024,
-    image: "/images/works/download.png",
+    image: "/images/works/daganInt.png",
     description:
-      "Un logiciel fait maison qui vous permet de trier automatiquement vos téléchargements dans des sous-dossier (images, vidéos, documents..). Disponible au téléchargement.",
-    link: "https://github.com/Daganx/Downloads_Cleanup",
-    technologies: ["Javascript"],
+      "Mon portfolio de fin de formation en Anglais pour les clients internationaux, construit avec React.",
+    link: "https://daganx.github.io/portfoliov2/",
+    technologies: ["React","CSS","Framer Motion"],
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const minimalProjects = [
     image: "/images/works/Wine3.webp",
     description:
       "Site web pour une gallerie d'art. Dashboard administrateur afin de gérer ses réalisations.",
-    link: "",
+    link: "https://parisart.vercel.app/",
     technologies: ["Symfony", "PHP", "JavaScript", "CSS"],
   },
 ];
