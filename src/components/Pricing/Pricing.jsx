@@ -19,10 +19,10 @@ export default function Pricing() {
         <div className="pricing__explanation">
           <h3>Clarté et Flexibilité</h3>
           <p>
-            Chaque projet est unique. Nos tarifications sont conçues pour être
+            Chaque projet est unique. Mes tarifications sont conçues pour être
             transparentes, sans frais cachés. Que vous ayez besoin d'un site
             vitrine simple, d'une application complexe ou d'une maintenance
-            continue, nous avons une solution adaptée à votre budget et vos
+            continue, j'ai une solution adaptée à votre budget et vos
             objectifs.
           </p>
         </div>
