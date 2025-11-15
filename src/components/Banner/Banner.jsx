@@ -56,7 +56,6 @@ export default function Banner() {
         </h2>
       </div>
       <div className="banner__footer">
-        <p className="banner__location">Bergerac (24)</p>
         <p className="banner__phone">06.88.64.20.03</p>
       </div>
     </section>
